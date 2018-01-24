@@ -35,6 +35,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       "2d"
     );
     this.context.fillStyle = "#000000";
+    this.context.beginPath();
+    this.context.drawImage(this.videoref.nativeElement, 0, 0, 500, 281);
     this.videoref.nativeElement.addEventListener("play", () => {
       this.draw();
     });
@@ -44,8 +46,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return this.http.get("/../assets/video/cartesian.json");
   }
   draw() {
-    this.context.clearRect(0, 0, 1000, 562);
-    this.context.drawImage(this.videoref.nativeElement, 0, 0, 1000, 562);
+    this.context.clearRect(0, 0, 500, 281);
+    this.context.drawImage(this.videoref.nativeElement, 0, 0, 500, 281);
     const currentFrame = Math.abs(this.videoref.nativeElement.currentTime * 24);
     for (const key in this.coordinates) {
       if (currentFrame < parseInt(key, 10)) {
@@ -59,15 +61,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.context.moveTo(0, 0);
     this.context.beginPath();
     for (let i = 0; i < data.length; i++) {
-      const x = data[i]["x"];
-      const y = data[i]["y"];
-      const w = data[i]["w"];
-      const h = data[i]["h"];
+      const x = Math.round(data[i]["x"] / 2);
+      const y = Math.round(data[i]["y"] / 2);
+      const w = Math.round(data[i]["w"] / 2);
+      const h = Math.round(data[i]["h"] / 2);
       this.context.rect(x, y, w, h);
     }
     this.context.fill();
-  }
-  step() {
-    console.log("Step!");
   }
 }
