@@ -25,6 +25,7 @@
     "@angular/router": "^5.2.1",
     "@types/video.js": "^6.2.3",
     "core-js": "^2.4.1",
+    "formidable": "^1.1.1",
     "rxjs": "^5.4.2",
     "video.js": "^6.6.0",
     "zone.js": "^0.8.14"

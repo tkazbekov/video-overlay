@@ -11,4 +11,4 @@
   </div>
 </div>
 <img class="video__banner" *ngIf="this.banner" #banner src="" alt="">
-<app-home-controls (banner)="onBanner($event)"></app-home-controls>
+<app-home-controls (banner)="onBanner($event)" (upload)="onUpload($event)"></app-home-controls>

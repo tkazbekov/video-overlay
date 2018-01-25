@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   banner: string;
   banners: Array<any> = [
     {
-      link: 'https://pbs.twimg.com/profile_images/638786550206230529/fwnBbDZF_400x400.png'
+      link:
+        'https://pbs.twimg.com/profile_images/638786550206230529/fwnBbDZF_400x400.png'
     },
     {
       link: 'https://a.wattpad.com/useravatar/Coca-Cola.256.650165.jpg'
@@ -96,5 +97,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log('I guess, the canvas should draw banner #', data);
     this.banner = this.banners[data]['link'];
     this.bannerImg.nativeElement.src = this.banner;
+  }
+
+  onUpload(file) {
+    console.log('File has been uploaded, checking!');
+    this.bannerImg.nativeElement.src = file;
   }
 }

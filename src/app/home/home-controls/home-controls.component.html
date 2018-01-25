@@ -7,11 +7,12 @@
   </div>
   <div class="controls__upload">
     <span class="upload__capture">Upload you own file</span>
-    <button mat-fab color="primary" class="upload__button">
+    <button mat-fab color="primary" class="upload__button" (click)="upload.click()">
       <svg class="upload__button-icon">
         <use xlink:href="#arrows" />
       </svg>
     </button>
+    <input #upload type='file' id="upload" style="display:none" (change)="fileUploaded($event)" />
   </div>
   <div class="controls__buttons end">
     <button mat-raised-button color="primary" class="controls__button">Embed</button>
