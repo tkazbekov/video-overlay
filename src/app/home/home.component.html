@@ -10,3 +10,5 @@
     <canvas #video2 width="500" height="281"></canvas>
   </div>
 </div>
+<img class="video__banner" *ngIf="this.banner" #banner src="" alt="">
+<app-home-controls (banner)="onBanner($event)"></app-home-controls>

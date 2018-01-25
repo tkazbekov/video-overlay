@@ -1,0 +1,41 @@
+.controls {
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+.controls__buttons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 120px;
+    position: relative;
+    &.end {
+        align-self: flex-end;
+    }
+}
+.controls__button {
+    display: flex;
+    height: 50px;
+    width: 100px;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.controls__upload {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border: 1px solid #e91e63;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.upload__capture {
+    margin-right: 20px;
+}
+
+.upload__button-icon {
+    max-width: 25px;
+    max-height: 25px;
+    fill: #fff;
+}
