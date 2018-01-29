@@ -16,4 +16,4 @@ RUN npm install
 
 RUN npm run build
 
-ENTRYPOINT ["node", "dist", ""]
+ENTRYPOINT ["node", "server"]
