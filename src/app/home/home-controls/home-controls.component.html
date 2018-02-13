@@ -1,5 +1,5 @@
 <div class="container controls">
-  <div class="controls__buttons">
+  <div class="controls__buttons left">
     <button mat-raised-button color="primary" class="controls__button" (click)="setBanner(0)">Link 1</button>
     <button mat-raised-button color="primary" class="controls__button" (click)="setBanner(1)">Link 2</button>
     <button mat-raised-button color="primary" class="controls__button" (click)="setBanner(2)">Link 3</button>
@@ -13,6 +13,12 @@
       </svg>
     </button>
     <input #upload type='file' id="upload" style="display:none" (change)="fileUploaded($event)" />
+  </div>
+  <span class="upload__divider">or</span>
+  <div class="controls__upload">
+    <span class="upload__capture url">Input image URL</span>
+    <input #input class="upload__text" type='text'/>
+    <button mat-raised-button color="primary" (click)="urlAdded()">Apply</button>
   </div>
   <div class="controls__buttons end">
     <button mat-raised-button color="primary" class="controls__button">Embed</button>

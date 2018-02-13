@@ -18,10 +18,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('video', { read: ElementRef })
   videoref: ElementRef;
   @ViewChild('video2') canvas: ElementRef;
-  @ViewChild('banner') bannerImg: ElementRef;
   public context: CanvasRenderingContext2D;
   coordinates: any;
-  banner: string;
+  img = new Image();
   banners: Array<any> = [
     {
       link:
@@ -83,8 +82,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       const y = Math.round(data[i]['y'] / 2);
       const w = Math.round(data[i]['w'] / 2);
       const h = Math.round(data[i]['h'] / 2);
-      if (this.banner) {
-        this.context.drawImage(this.bannerImg.nativeElement, x, y, w, h);
+      if (this.img.src) {
+        this.context.drawImage(this.img, x, y, w, h);
       } else {
         this.context.rect(x, y, w, h);
         this.context.fill();
@@ -94,13 +93,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   onBanner(data) {
-    console.log('I guess, the canvas should draw banner #', data);
-    this.banner = this.banners[data]['link'];
-    this.bannerImg.nativeElement.src = this.banner;
+    this.img.src = this.banners[data]['link'];
   }
 
   onUpload(file) {
-    console.log('File has been uploaded, checking!');
-    this.bannerImg.nativeElement.src = file;
+    this.img.src = file;
   }
 }

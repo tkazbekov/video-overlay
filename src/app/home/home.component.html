@@ -1,8 +1,6 @@
 <div class="container video">
   <div class="video__wrap">
-    <video #video class="video-js vjs-big-play-centered"
-    controls
-    preload="auto">
+    <video #video class="video-js vjs-big-play-centered" controls preload="auto">
       <source src="/../assets/video/video.mp4">
     </video>
   </div>
@@ -10,5 +8,4 @@
     <canvas #video2 width="500" height="281"></canvas>
   </div>
 </div>
-<img class="video__banner" #banner src="" alt="">
 <app-home-controls (banner)="onBanner($event)" (upload)="onUpload($event)"></app-home-controls>
